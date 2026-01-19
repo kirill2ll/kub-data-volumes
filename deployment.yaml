@@ -20,7 +20,7 @@ spec:
               name: story-volume
       volumes:
         - name: story-volume
-          # type of the volume (emptyDir -> the volume will be inside the Pod)
-          emptyDir: {} 
-
+          hostPath:
+            path: /data/stories
+            type: DirectoryOrCreate
  
