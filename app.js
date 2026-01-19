@@ -32,4 +32,9 @@ app.post('/story', (req, res) => {
   });
 });
 
+// crash test for K8s and docker tests
+app.get('/crash', (req, res) => {
+  process.exit(1);
+});
+
 app.listen(3000);

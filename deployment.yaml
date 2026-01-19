@@ -14,14 +14,13 @@ spec:
     spec:
       containers:
         - name: stories
-          image: kvitkovski/stories
-      #     volumeMounts:
-      #       - mountPath: /app/story
-      #         name: story-volume
-      #     ports:
-      #       - containerPort: 3000
-      # volumes:
-      #   - name: story-volume
-      #     persistentVolumeClaim:
-      #       claimName: story-pvc
+          image: kvitkovski/stories:1
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-volume
+      volumes:
+        - name: story-volume
+          # type of the volume (emptyDir -> the volume will be inside the Pod)
+          emptyDir: {} 
+
  
