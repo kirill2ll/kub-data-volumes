@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
         - name: stories
-          image: kvitkovski/stories:1
+          image: kvitkovski/stories:2
+          env:
+            - name: STORY_FOLDER
+              value: 'story'
           volumeMounts:
             - mountPath: /app/story
               name: story-volume
